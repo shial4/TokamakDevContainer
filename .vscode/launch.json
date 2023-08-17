@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Run Carton Dev",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "carton dev",
+            "cwd": "${workspaceFolder:TestApp}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Debug TokamakApp",
+            "program": "${workspaceFolder:TestApp}/.build/debug/TokamakApp",
+            "args": [],
+            "cwd": "${workspaceFolder:TestApp}",
+            "preLaunchTask": "swift: Build Debug TokamakApp"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Release TokamakApp",
+            "program": "${workspaceFolder:TestApp}/.build/release/TokamakApp",
+            "args": [],
+            "cwd": "${workspaceFolder:TestApp}",
+            "preLaunchTask": "swift: Build Release TokamakApp"
+        }
+    ]
+}
